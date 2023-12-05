@@ -5,12 +5,9 @@ __date__ = "2023"
 __license__ = "MIT"
 
 
-from typing import Optional
-
-
 def main() -> None:
     """Solve day 4 puzzles."""
-    with open("day_4_input.txt", encoding="ascii") as input_file:
+    with open("data/day_4_input.txt", encoding="ascii") as input_file:
         puzzle_input = input_file.readlines()
 
     star_1(puzzle_input)
@@ -56,7 +53,7 @@ def star_2(puzzle_input: list[str]) -> None:
     print(f"Star 2: {total}")
 
 
-def parse_line(line: str) -> tuple[set[int], set[int]]:
+def parse_line(line: str) -> tuple[set[str], set[str]]:
     """Parse a line of numbers.
 
     :param line: Input line

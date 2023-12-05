@@ -20,7 +20,7 @@ SPELLED_DIGITS = {
 
 def main() -> None:
     """Solve day 1 puzzles."""
-    with open("day_1_input.txt", encoding="ascii") as input_file:
+    with open("data/day_1_input.txt", encoding="ascii") as input_file:
         puzzle_input = input_file.readlines()
 
     star_1(puzzle_input)

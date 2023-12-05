@@ -9,7 +9,7 @@ MAX = {"red": 12, "green": 13, "blue": 14}
 
 def main() -> None:
     """Solve day 2 puzzles."""
-    with open("day_2_input.txt", encoding="ascii") as input_file:
+    with open("data/day_2_input.txt", encoding="ascii") as input_file:
         puzzle_input = input_file.readlines()
 
     star_1(puzzle_input)

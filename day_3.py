@@ -10,7 +10,7 @@ from typing import Optional
 
 def main() -> None:
     """Solve day 3 puzzles."""
-    with open("day_3_input.txt", encoding="ascii") as input_file:
+    with open("data/day_3_input.txt", encoding="ascii") as input_file:
         raw_input = input_file.readlines()
 
     puzzle_input = pad_input(raw_input)
@@ -106,10 +106,7 @@ def get_value(puzzle_input: list[str], number: str, i: int, j: int) -> int:
     """
     for ii in range(i - 1, i + 2):
         for jj in range(j - 1, j + len(number) + 1):
-            if (
-                not puzzle_input[ii][jj].isdigit()
-                and puzzle_input[ii][jj] != "."
-            ):
+            if not puzzle_input[ii][jj].isdigit() and puzzle_input[ii][jj] != ".":
                 return int(number)
 
     return 0
