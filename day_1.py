@@ -19,7 +19,7 @@ SPELLED_DIGITS = {
 
 
 def main() -> None:
-    """Solve day 1 problems."""
+    """Solve day 1 puzzles."""
     with open("day_1_input.txt", encoding="ascii") as input_file:
         puzzle_input = input_file.readlines()
 
@@ -29,7 +29,7 @@ def main() -> None:
 
 
 def star_1(puzzle_input: list[str]) -> None:
-    """Solve first problem.
+    """Solve first puzzle.
 
     :param puzzle_input: Puzzle input
     """
@@ -42,7 +42,7 @@ def star_1(puzzle_input: list[str]) -> None:
 
 
 def star_2(puzzle_input: list[str]) -> None:
-    """Solve second problem.
+    """Solve second puzzle.
 
     :param puzzle_input: Puzzle input
     """
