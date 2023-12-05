@@ -61,7 +61,7 @@ def is_possible(max_colors: dict[str, int]) -> bool:
     return True
 
 
-def process_line(line: str) -> list[int, dict[str, int]]:
+def process_line(line: str) -> tuple[int, dict[str, int]]:
     """Process line.
 
     :param line: Input line
