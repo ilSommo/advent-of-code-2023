@@ -51,7 +51,7 @@ def main() -> None:
 
 
 def star_1(puzzle_input: list[str]) -> None:
-    """Solve first puzzle.
+    """Solve the first puzzle.
 
     :param puzzle_input: Puzzle input
     """
@@ -72,7 +72,7 @@ def star_1(puzzle_input: list[str]) -> None:
 
 
 def star_2(puzzle_input: list[str]) -> None:
-    """Solve second puzzle.
+    """Solve the second puzzle.
 
     :param puzzle_input: Puzzle input
     """

@@ -16,7 +16,10 @@ def main() -> None:
 
 
 def star_1(puzzle_input: list[str]) -> None:
-    """Solve the first puzzle."""
+    """Solve the first puzzle.
+
+    :param puzzle_input: Puzzle input
+    """
     total = 0
     for line in puzzle_input:
         sequence = list(map(int, line.split()))
@@ -26,7 +29,10 @@ def star_1(puzzle_input: list[str]) -> None:
 
 
 def star_2(puzzle_input: list[str]) -> None:
-    """Solve the second puzzle."""
+    """Solve the second puzzle.
+
+    :param puzzle_input: Puzzle input
+    """
     total = 0
     for line in puzzle_input:
         sequence = list(map(int, line.split()))
@@ -36,7 +42,11 @@ def star_2(puzzle_input: list[str]) -> None:
 
 
 def estrapolate(sequence: list[int]) -> int:
-    """Estrapolate next element from list."""
+    """Estrapolate next element from sequence.
+
+    :param sequence: Input sequence
+    :return: Next element
+    """
     differences = []
     for i, _ in enumerate(sequence[:-1]):
         differences.append(sequence[i + 1] - sequence[i])
@@ -48,7 +58,11 @@ def estrapolate(sequence: list[int]) -> int:
 
 
 def backward_estrapolate(sequence: list[int]) -> int:
-    """Estrapolate previous element from list."""
+    """Estrapolate previous element from sequence.
+
+    :param sequence: Input sequence
+    :return: Previous element
+    """
     differences = []
     for i, _ in enumerate(sequence[:-1]):
         differences.append(sequence[i + 1] - sequence[i])

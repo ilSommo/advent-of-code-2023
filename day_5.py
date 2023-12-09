@@ -31,7 +31,7 @@ def main() -> None:
 
 
 def star_1(seeds: list[int], maps: dict[str, list[tuple[int, ...]]]) -> None:
-    """Solve first puzzle.
+    """Solve the first puzzle.
 
     :param seeds: Input seeds
     :param maps: Dictionary of lists of (destination, source, range) tuples
@@ -45,7 +45,7 @@ def star_1(seeds: list[int], maps: dict[str, list[tuple[int, ...]]]) -> None:
 
 
 def star_2(seeds: list[int], maps: dict[str, list[tuple[int, ...]]]) -> None:
-    """Solve second puzzle.
+    """Solve the second puzzle.
 
     :param seeds: Input seeds
     :param maps: Dictionary of lists of (destination, source, range) tuples

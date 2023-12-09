@@ -1,4 +1,4 @@
-"Day 3: Gear Ratios"
+"""Day 3: Gear Ratios."""
 
 __author__ = "Martino M. L. Pulici <martinomarelakota@yahoo.it>"
 __date__ = "2023"
@@ -21,7 +21,7 @@ def main() -> None:
 
 
 def star_1(puzzle_input: list[str]) -> None:
-    """Solve first puzzle.
+    """Solve the first puzzle.
 
     :param puzzle_input: Puzzle input
     """
@@ -37,7 +37,7 @@ def star_1(puzzle_input: list[str]) -> None:
 
 
 def star_2(puzzle_input: list[str]) -> None:
-    """Solve second puzzle.
+    """Solve the second puzzle.
 
     :param puzzle_input: Puzzle input
     """
@@ -106,7 +106,10 @@ def get_value(puzzle_input: list[str], number: str, i: int, j: int) -> int:
     """
     for ii in range(i - 1, i + 2):
         for jj in range(j - 1, j + len(number) + 1):
-            if not puzzle_input[ii][jj].isdigit() and puzzle_input[ii][jj] != ".":
+            if (
+                not puzzle_input[ii][jj].isdigit()
+                and puzzle_input[ii][jj] != "."
+            ):
                 return int(number)
 
     return 0
