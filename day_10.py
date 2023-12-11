@@ -1,4 +1,4 @@
-"""Day 9: Mirage Maintenance."""
+"""Day 10: Pipe Maze."""
 
 __author__ = "Martino M. L. Pulici <martinomarelakota@yahoo.it>"
 __date__ = "2023"
