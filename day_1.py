@@ -4,7 +4,6 @@ __author__ = "Martino M. L. Pulici <martinomarelakota@yahoo.it>"
 __date__ = "2023"
 __license__ = "MIT"
 
-
 SPELLED_DIGITS = {
     "one": "one1one",
     "two": "two2two",
