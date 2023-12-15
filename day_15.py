@@ -27,19 +27,7 @@ def star_1(puzzle_input: str) -> None:
 
 def star_2(puzzle_input: str) -> None:
     """Solve the second puzzle."""
-    boxes: dict[int, dict[str, int]] = {}
-    for i in range(256):
-        boxes[i] = {}
-
-    for step in puzzle_input.split(","):
-        if "=" in step:
-            label, focal = step.split("=")
-            box = step2hash(label)
-            boxes[box][label] = int(focal)
-        else:
-            label = step[:-1]
-            box = step2hash(label)
-            boxes[box].pop(label, None)
+    boxes = fill_boxes(puzzle_input)
 
     total = 0
 
@@ -59,6 +47,24 @@ def char2hash(current_value: int, char: str) -> int:
     current_value %= 256
 
     return current_value
+
+
+def fill_boxes(puzzle_input: str) -> dict[int, dict[str, int]]:
+    """Fill boxes with given input."""
+    boxes: dict[int, dict[str, int]] = {}
+
+    for step in puzzle_input.split(","):
+        if "=" in step:
+            label, focal = step.split("=")
+            box = step2hash(label)
+            boxes[box] = boxes.get(box, {}) | {label: int(focal)}
+
+        else:
+            label = step[:-1]
+            box = step2hash(label)
+            boxes.get(box, {}).pop(label, None)
+
+    return boxes
 
 
 def step2hash(step: str) -> int:
