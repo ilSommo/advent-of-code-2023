@@ -4,12 +4,27 @@ __author__ = "Martino M. L. Pulici <martinomarelakota@yahoo.it>"
 __date__ = "2023"
 __license__ = "MIT"
 
+<<<<<<< HEAD
 
 from dataclasses import dataclass
 from itertools import product
 import math
 from tqdm import tqdm
 from heapq import heappop, heappush
+=======
+from heapq import heappop, heappush
+from typing import NamedTuple
+
+
+class State(NamedTuple):
+    """Problem state."""
+
+    heat: int
+    x: int
+    y: int
+    p_x: int
+    p_y: int
+>>>>>>> 9a95a90b4cc578450a324b9cbdb6efaaca881400
 
 
 def main() -> None:
@@ -24,6 +39,7 @@ def main() -> None:
 
 def star_1(puzzle_input: list[str]) -> None:
     """Solve the first puzzle."""
+<<<<<<< HEAD
     max_x = len(puzzle_input[0]) - 1
     max_y = len(puzzle_input) - 1
     min_p = 1
@@ -51,10 +67,16 @@ def star_1(puzzle_input: list[str]) -> None:
     )
 
     print(f"Star 1: {dist}")
+=======
+    min_heat = get_minimum_heat(puzzle_input, 1, 3)
+
+    print(f"Star 1: {min_heat}")
+>>>>>>> 9a95a90b4cc578450a324b9cbdb6efaaca881400
 
 
 def star_2(puzzle_input: list[str]) -> None:
     """Solve the second puzzle."""
+<<<<<<< HEAD
     max_x = len(puzzle_input[0]) - 1
     max_y = len(puzzle_input) - 1
     min_p = 4
@@ -223,6 +245,70 @@ class Coordinates:
             )
 
         return neighbors
+=======
+    min_heat = get_minimum_heat(puzzle_input, 4, 10)
+
+    print(f"Star 2: {min_heat}")
+
+
+def get_minimum_heat(
+    puzzle_input: list[str], min_steps: int, max_steps: int
+) -> int:
+    """Get the minimum possible total heat."""
+    int_input = []
+    for line in puzzle_input:
+        int_input.append(list(map(int, list(line))))
+
+    max_x = len(int_input[0]) - 1
+    max_y = len(int_input) - 1
+
+    heap = [State(0, 0, 0, 1, 0), State(0, 0, 0, 0, 1)]
+    visited = set()
+
+    while heap:
+        current = heappop(heap)
+        if current.x == max_x and current.y == max_y:
+            return current.heat
+
+        if (current.x, current.y, current.p_x, current.p_y) in visited:
+            continue
+
+        visited.add((current.x, current.y, current.p_x, current.p_y))
+
+        if current.p_x == 0:
+            for p in range(min_steps, max_steps + 1):
+                y = current.y
+                if current.x + p <= max_x:
+                    x = current.x + p
+                    heat = current.heat + sum(
+                        int_input[y][i] for i in range(current.x + 1, x + 1)
+                    )
+                    heappush(heap, State(heat, x, y, p, 0))
+                if current.x - p >= 0:
+                    x = current.x - p
+                    heat = current.heat + sum(
+                        int_input[y][i] for i in range(x, current.x)
+                    )
+                    heappush(heap, State(heat, x, y, -p, 0))
+
+        if current.p_y == 0:
+            for p in range(min_steps, max_steps + 1):
+                x = current.x
+                if current.y + p <= max_y:
+                    y = current.y + p
+                    heat = current.heat + sum(
+                        int_input[j][x] for j in range(current.y + 1, y + 1)
+                    )
+                    heappush(heap, State(heat, x, y, 0, p))
+                if current.y - p >= 0:
+                    y = current.y - p
+                    heat = current.heat + sum(
+                        int_input[j][x] for j in range(y, current.y)
+                    )
+                    heappush(heap, State(heat, x, y, 0, -p))
+
+    raise ValueError("Invalid input!")
+>>>>>>> 9a95a90b4cc578450a324b9cbdb6efaaca881400
 
 
 if __name__ == "__main__":
